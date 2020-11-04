@@ -11,9 +11,9 @@ test('creates an Engineer object', () => {
     expect(engineer.github).toEqual(expect.any(String));
 });
 
-// Test to get an engineers data:
+// Test to get an engineers name:
 test('gets engineer name', () => {
-    const engineer = new Employee('Joseph', 2001, 'joseph@email.com', 'jpac');
+    const engineer = new Engineer('Joseph', 2001, 'joseph@email.com', 'jpac');
 
     expect(engineer.getName()).toEqual(expect.any(String));
     
