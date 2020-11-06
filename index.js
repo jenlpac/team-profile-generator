@@ -111,7 +111,70 @@ const addEmployee = () => {
 
 
 // Prompts to add an engineer:
-
+const addEngineer = () => {
+    console.log("-----------------------");
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'engineerName',
+                message: "What is the this engineer's name?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter engineer's name to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerId',
+                message: "What is this engineer's emmployee id?",
+                validate: idInput => {
+                    if (idInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the engineer's id to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerEmail',
+                message: "What is this engineer's email address?",
+                validate: emailInput => {
+                    if (emailInput.match(emailValidator)) {
+                        return true;
+                    } else {
+                        console.log("Please enter a valid email address to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'engineerGithub',
+                message: "What is this engineer's Github username?",
+                validate: githubInput => {
+                    if (githubInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the engineer's Github username to continue.");
+                        return false;
+                    }
+                }
+            },
+        ])
+        .then(data => {
+            const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+            
+            team.push(engineer);
+            addEmployee();
+        })
+}
 
 
 // Prompts to add an intern:

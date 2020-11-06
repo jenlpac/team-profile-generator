@@ -26,14 +26,14 @@ const buildTeam = team => {
         return `
             <div class="card">
                 <div class="card-header bg-secondary">
-                    <h3 class="card-title">Engineer Name Goes Here</h3>
-                    <h5 class="card-title">Engineer Role Goes Here</h5>
+                    <h3 class="card-title">${engineer.getName()}</h3>
+                    <h5 class="card-title">${engineer.getRole()}</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item">ID:&nbsp;&nbsp;{Engineer ID}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;{Engineer email}</li>
-                        <li class="list-group-item">GitHub Username:&nbsp;&nbsp;{Engineer github}</li>
+                        <li class="list-group-item">ID:&nbsp;&nbsp;${engineer.getId()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;${engineer.getEmail()}</li>
+                        <li class="list-group-item">GitHub Username:&nbsp;&nbsp;${engineer.getGithub()}}</li>
                     </ul>
                 </div>
             </div>
@@ -45,14 +45,14 @@ const buildTeam = team => {
         return `
             <div class="card">
                 <div class="card-header bg-success">
-                    <h3 class="card-title">Intern Name Goes Here</h3>
-                    <h5 class="card-title">Intern Role Goes Here</h5>
+                    <h3 class="card-title">${intern.getName()}</h3>
+                    <h5 class="card-title">${intern.getName()}</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item">ID:&nbsp;&nbsp;{Intern ID}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;{Intern email}</li>
-                        <li class="list-group-item">School:&nbsp;&nbsp;{Intern github}</li>
+                        <li class="list-group-item">ID:&nbsp;&nbsp;${intern.getId()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;${intern.getEmail()}</li>
+                        <li class="list-group-item">School:&nbsp;&nbsp;${intern.getSchool()}</li>
                     </ul>
                 </div>
             </div>
