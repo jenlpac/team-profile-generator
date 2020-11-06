@@ -13,7 +13,7 @@ const buildTeam = team => {
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item">ID:&nbsp;&nbsp;${manager.getId()}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;${manager.getEmail()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;<a href="mailto:${manager.getEmail}">${manager.getEmail()}</li>
                         <li class="list-group-item">Office #:&nbsp;&nbsp;${manager.getOffice()}</li>
                     </ul>
                 </div>
@@ -32,7 +32,7 @@ const buildTeam = team => {
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item">ID:&nbsp;&nbsp;${engineer.getId()}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;${engineer.getEmail()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;<a href="mailto:${engineer.getEmail}">${engineer.getEmail()}</li>
                         <li class="list-group-item">GitHub Username:&nbsp;&nbsp;${engineer.getGithub()}}</li>
                     </ul>
                 </div>
@@ -51,7 +51,7 @@ const buildTeam = team => {
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item">ID:&nbsp;&nbsp;${intern.getId()}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;${intern.getEmail()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;<a href="mailto:${intern.getEmail}">${intern.getEmail()}</li>
                         <li class="list-group-item">School:&nbsp;&nbsp;${intern.getSchool()}</li>
                     </ul>
                 </div>
@@ -90,7 +90,7 @@ module.exports = team => {
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Team Profile Generato</title>
+            <title>Team Profile Generator</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 
         </head>
