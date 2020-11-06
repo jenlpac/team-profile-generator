@@ -7,14 +7,14 @@ const buildTeam = team => {
         return `
             <div class="card">
                 <div class="card-header bg-primary">
-                    <h2 class="card-title">Manager Name Goes Here</h2>
-                    <h3 class="card-title">Manager Role Goes Here</h2>
+                    <h3 class="card-title">${manager.getName()}</h3>
+                    <h5 class="card-title">${manager.getRole()}</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item">ID:&nbsp;&nbsp;{Manager ID}</li>
-                        <li class="list-group-item">Email:&nbsp;&nbsp;{Manager email}</li>
-                        <li class="list-group-item">Office #:&nbsp;&nbsp;{Manager office}</li>
+                        <li class="list-group-item">ID:&nbsp;&nbsp;${manager.getId()}</li>
+                        <li class="list-group-item">Email:&nbsp;&nbsp;${manager.getEmail()}</li>
+                        <li class="list-group-item">Office #:&nbsp;&nbsp;${manager.getOffice()}</li>
                     </ul>
                 </div>
             </div>
@@ -26,8 +26,8 @@ const buildTeam = team => {
         return `
             <div class="card">
                 <div class="card-header bg-secondary">
-                    <h2 class="card-title">Engineer Name Goes Here</h2>
-                    <h3 class="card-title">Engineer Role Goes Here</h2>
+                    <h3 class="card-title">Engineer Name Goes Here</h3>
+                    <h5 class="card-title">Engineer Role Goes Here</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -45,8 +45,8 @@ const buildTeam = team => {
         return `
             <div class="card">
                 <div class="card-header bg-success">
-                    <h2 class="card-title">Intern Name Goes Here</h2>
-                    <h3 class="card-title">Intern Role Goes Here</h2>
+                    <h3 class="card-title">Intern Name Goes Here</h3>
+                    <h5 class="card-title">Intern Role Goes Here</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -72,7 +72,7 @@ const buildTeam = team => {
         .join("")
     );
     cards.push(team
-        .filter(intern => createIntern.getRole() === "Intern")
+        .filter(employee => employee.getRole() === "Intern")
         .map(intern => createIntern(intern))
         .join("")
     );
@@ -95,8 +95,8 @@ module.exports = team => {
 
         </head>
         <body>
-            <header class="bg-info sticky-top text-light">
-                <h1 class="text-center">My Team</h1>
+            <header class="bg-info sticky-top text-light mb-4 py-3">
+                <h1 class="text-center ">My Team</h1>
             </header>
             <div class="container">
                 <div class="row">
@@ -106,7 +106,7 @@ module.exports = team => {
                     </div>
                 </div>
             <div>
-            
+
         </body>
     </html>
     `

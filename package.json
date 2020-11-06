@@ -23,5 +23,12 @@
   "homepage": "https://github.com/jenlpac/team-profile-generator#readme",
   "devDependencies": {
     "jest": "^26.6.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "camelcase": "^5.3.1",
+    "inquirer": "^7.3.3"
   }
 }

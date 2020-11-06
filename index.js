@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const { writeFile } = require('./utils/generate-site');
+const writeFile = require('./utils/generate-site');
 const generatePage = require('./src/page-template');
 
 const emailValidator = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -16,7 +16,7 @@ const addManager = () => {
         .prompt([
             {
                 type: 'input',
-                name: 'name',
+                name: 'managerName',
                 message: "What is the team manager's name?",
                 validate: nameInput => {
                     if (nameInput) {
@@ -29,7 +29,7 @@ const addManager = () => {
             },
             {
                 type: 'input',
-                name: 'id',
+                name: 'managerId',
                 message: "What is the manager's emmployee id?",
                 validate: idInput => {
                     if (idInput) {
@@ -42,7 +42,7 @@ const addManager = () => {
             },
             {
                 type: 'input',
-                name: 'email',
+                name: 'managerEmail',
                 message: "What is the manager's email address?",
                 validate: emailInput => {
                     if (emailInput.match(emailValidator)) {
@@ -55,7 +55,7 @@ const addManager = () => {
             },
             {
                 type: 'input',
-                name: 'office',
+                name: 'managerOffice',
                 message: "What is the manager's office number?",
                 validate: officeInput => {
                     if (officeInput) {
@@ -68,22 +68,46 @@ const addManager = () => {
             },
         ])
         .then(data => {
-            const data = { name, id, email, office };
-            const manager = new Manager(name, id, email, office);
-            const managerData = {
-                name: manager.getRole(),
-                id: manager.getId(),
-                email: manager.getEmail(),
-                office: manager.getOffice(),
-                role: manager.getRole()
-            }
-            team.push(managerData);
+            const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOffice);
+            
+            team.push(manager);
             addEmployee();
         })
 }
 
 // Prompts to include another team member:
+const addEmployee = () => {
+    console.log("-----------------------");
+    inquirer
+        .prompt([
+            {
+                type: 'list',
+                name: 'nextEmployee',
+                message: "Please select your next team member, or complete your team.",
+                choices: ['Engineer', 'Intern', 'Build Team']
+            },
+        ])
+        .then(data => {
+            if(data.nextEmployee === 'Engineer') {
+                addEngineer();
+            }
+            else if(data.nextEmployee === 'Intern') {
+                addIntern();
+            }
+            else {
+                const pageHTML = generatePage(team);
 
+                return writeFile(pageHTML)
+                    .then(writeFileResponse => {
+                        console.log(writeFileResponse);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+            }
+            
+        })
+}
 
 
 // Prompts to add an engineer:
@@ -99,4 +123,4 @@ const addManager = () => {
 
 
 // Call to begin questions:
-// addManager();
+addManager();
