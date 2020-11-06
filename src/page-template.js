@@ -33,7 +33,7 @@ const buildTeam = team => {
                     <ul class="list-group">
                         <li class="list-group-item">ID:&nbsp;&nbsp;${engineer.getId()}</li>
                         <li class="list-group-item">Email:&nbsp;&nbsp;<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                        <li class="list-group-item">GitHub:&nbsp;&nbsp;${engineer.getGithub()}</li>
+                        <li class="list-group-item">GitHub:&nbsp;&nbsp;<a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
                     </ul>
                 </div>
             </div>
