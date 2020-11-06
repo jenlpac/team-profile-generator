@@ -5,7 +5,7 @@ const buildTeam = team => {
     // Create manager card:
     const createManager = manager => {
         return `
-            <div class="card">
+            <div class="card m-3 shadow">
                 <div class="card-header bg-primary">
                     <h3 class="card-title">${manager.getName()}</h3>
                     <h5 class="card-title">${manager.getRole()}</h5>
@@ -24,7 +24,7 @@ const buildTeam = team => {
     // Create engineer card:
     const createEngineer = engineer => {
         return `
-            <div class="card">
+            <div class="card m-3 shadow">
                 <div class="card-header bg-secondary">
                     <h3 class="card-title">${engineer.getName()}</h3>
                     <h5 class="card-title">${engineer.getRole()}</h5>
@@ -33,7 +33,7 @@ const buildTeam = team => {
                     <ul class="list-group">
                         <li class="list-group-item">ID:&nbsp;&nbsp;${engineer.getId()}</li>
                         <li class="list-group-item">Email:&nbsp;&nbsp;<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                        <li class="list-group-item">GitHub Username:&nbsp;&nbsp;${engineer.getGithub()}</li>
+                        <li class="list-group-item">GitHub:&nbsp;&nbsp;${engineer.getGithub()}</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const buildTeam = team => {
     // Create intern card:
     const createIntern = intern => {
         return `
-            <div class="card">
+            <div class="card m-3 shadow">
                 <div class="card-header bg-success">
                     <h3 class="card-title">${intern.getName()}</h3>
                     <h5 class="card-title">${intern.getRole()}</h5>
