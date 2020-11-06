@@ -22,4 +22,4 @@
 * https://drive.google.com/file/d/1JIpKYJLCMeh-ydkU0-jNcCEMd6dEXlRe/view
 
 #### Link to auto-generated sample index.html file:
-* 
+* https://github.com/jenlpac/team-profile-generator/blob/main/dist/SAMPLEindex.html
