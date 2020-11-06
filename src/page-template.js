@@ -46,7 +46,7 @@ const buildTeam = team => {
             <div class="card">
                 <div class="card-header bg-success">
                     <h3 class="card-title">${intern.getName()}</h3>
-                    <h5 class="card-title">${intern.getName()}</h5>
+                    <h5 class="card-title">${intern.getRole()}</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
