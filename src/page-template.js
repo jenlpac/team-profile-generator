@@ -1,10 +1,12 @@
+const fs = require("fs");
+
 // Move cards into a function to create all cards
 const buildTeam = team => {
     // Create manager card:
     const createManager = manager => {
         return `
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-primary">
                     <h2 class="card-title">Manager Name Goes Here</h2>
                     <h3 class="card-title">Manager Role Goes Here</h2>
                 </div>
@@ -23,7 +25,7 @@ const buildTeam = team => {
     const createEngineer = engineer => {
         return `
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-secondary">
                     <h2 class="card-title">Engineer Name Goes Here</h2>
                     <h3 class="card-title">Engineer Role Goes Here</h2>
                 </div>
@@ -42,7 +44,7 @@ const buildTeam = team => {
     const createIntern = intern => {
         return `
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-success">
                     <h2 class="card-title">Intern Name Goes Here</h2>
                     <h3 class="card-title">Intern Role Goes Here</h2>
                 </div>
@@ -82,7 +84,31 @@ const buildTeam = team => {
 module.exports = team => {
 
     return `
-        
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Team Profile Generato</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+        </head>
+        <body>
+            <header class="bg-info sticky-top text-light">
+                <h1 class="text-center">My Team</h1>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <!-- Cards go here -->
+                        ${buildTeam(team)}
+                    </div>
+                </div>
+            <div>
+            
+        </body>
+    </html>
     `
 
 }
