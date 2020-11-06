@@ -12,12 +12,14 @@
 * Github usernames are linked to the individual's GitHub profile.
 
 ## Screenshot:
-
+![Screenshot 1](./assets/images/Screenshot_1.JPG)
 
 ## Links:
 #### Link to GitHub repository:
+* https://github.com/jenlpac/team-profile-generator
 
 #### Link to walkthrough video:
-https://drive.google.com/file/d/1jTtkR5qzjzYz4Hw3jL1XACRfJmBDSzoT/view
+* https://drive.google.com/file/d/1JIpKYJLCMeh-ydkU0-jNcCEMd6dEXlRe/view
 
 #### Link to auto-generated sample index.html file:
+* 
