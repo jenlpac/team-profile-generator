@@ -100,7 +100,7 @@ module.exports = team => {
             </header>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
+                    <div class="col-12 d-flex justify-content-center flex-wrap">
                         <!-- Cards go here -->
                         ${buildTeam(team)}
                     </div>
