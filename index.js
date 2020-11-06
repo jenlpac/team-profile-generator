@@ -178,10 +178,70 @@ const addEngineer = () => {
 
 
 // Prompts to add an intern:
-
-
-
-// Write to file:
+const addIntern = () => {
+    console.log("----------------------");
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'internName',
+                message: "What is the this intern's name?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern's name to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'internId',
+                message: "What is this intern's emmployee id?",
+                validate: idInput => {
+                    if (idInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern's id to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'internEmail',
+                message: "What is this intern's email address?",
+                validate: emailInput => {
+                    if (emailInput.match(emailValidator)) {
+                        return true;
+                    } else {
+                        console.log("Please enter a valid email address to continue.");
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'internSchool',
+                message: "What school is this intern attending?",
+                validate: schoolInput => {
+                    if (schoolInput) {
+                        return true;
+                    } else {
+                        console.log("Please enter the intern's school to continue.");
+                        return false;
+                    }
+                }
+            },
+        ])
+        .then(data => {
+            const intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
+            
+            team.push(intern);
+            addEmployee();
+        })
+}
 
 
 
