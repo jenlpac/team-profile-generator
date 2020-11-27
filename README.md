@@ -1,4 +1,4 @@
-# Team Profile Generator Challenge #10
+# Team Roster Generator
 
 ## Challenge Description:
 * Created a terminal application to auto-generated an employee team roster.
